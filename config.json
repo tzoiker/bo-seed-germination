@@ -1,0 +1,24 @@
+{
+	"Exploit": [0.1, 0.1, 0.1, 0.1],
+	"Explore": [4, 4, 4, 4],
+	"kernel_params": [
+		[
+			{ "kernel": "Matern", "params": { "length_scale": 1.0, "length_scale_bounds": [1e-3, 1e5], "nu": 2.5 }},
+			{ "kernel": "ConstantKernel", "params": { "constant_value": 1e-2, "constant_value_bounds": [1e-5, 1e5] }}
+		],
+		[
+			{ "kernel": "WhiteKernel", "params": { "noise_level": 1e-2, "noise_level_bounds": [1e-10, 1e5] }}
+		]
+	],
+	"alg": "SLSQP",
+	"max_eval": 22,
+	"step": 1e-3,
+    "random_state": 1337,
+	"n_chambers": 1,
+    "kappa0_exploit": 1,
+	"kappa0_explore": 5,
+    "atol": 1e-6,
+	"rtol": 1e-3,
+    "optimize_kappa": "true",
+    "normalize_y": "true"
+}
