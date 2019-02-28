@@ -159,7 +159,6 @@ class Experiment:
 			params.fixed_params[k] if k in params.fixed_params else np.nan
 			for k in self.bo.bo.keys
 		])
-		# print(fixed_params)
 		self.bo.fixed_params = fixed_params
 
 					
@@ -252,7 +251,6 @@ class Experiment:
 				if callback is not None: callback(self)
 				print(f'Sampled kappa: {kappa}')
 				print(f'Sampled x: {np.round(self.history[-1].x, decimals=2)}')
-				# print(f'results[kappa] = {self.bo.results[kappa]}')
 				if not interactive: break
 				print('OK? y/n')
 				if check_yes(input()): break
@@ -263,12 +261,8 @@ class Experiment:
 			else:
 				states.append(self.save_state())
 			self.fit_predict = self.bo.maximize_and_update(kappa)
-			# print('After maximize_and_update')
-			# print(self.bo.bo.space.X)
 			if callback is not None: callback(self)
-			# print('After callback')
-			# print(self.bo.bo.space.X)
-		
+
 		if callback is not None: callback(self)
 
 		x_predict = np.array(list(map(lambda s: s.history[-1].x, states))).reshape((-1, len(params.parameters)))

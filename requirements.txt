@@ -3,4 +3,4 @@ scipy==1.1.0
 scikit-learn==0.19.1
 pandas==0.22.0
 dill==0.2.7.1
-git+git://github.com/tzoiker/BayesianOptimization.git
+git+git://github.com/tzoiker/BayesianOptimization.git@boseed

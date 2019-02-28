@@ -193,14 +193,10 @@ class BoWrapper():
 		self.cache_hits = 0
 	
 	def maximize_and_update(self, kappa):
-		# print(self.bo.space.X)
-		# print(self.bo.space.bounds)
 		self.bo.maximize(init_points=0, n_iter=1, kappa=kappa, fit=False, update=True, fixed_params=self.fixed_params)
-		# print(self.bo.space.X)
 		fit_predict = np.array(self.bo.gp.predict(self.bo.space.X, return_std=True))
 		self.results = {}
 		self.reset_counters()
-		# print(self.bo.space.X)
 		return fit_predict.T
 	
 	def maximize(self, kappa):
