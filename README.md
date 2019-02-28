@@ -3,8 +3,12 @@ Source code for BO seed germination experiments
 
 # Installation
 
-* Setup Python 3.6 environment.
-* Install dependecies: `pip install -r requirements.txt`
+* Up to date version is v0.1.
+* If you do not have python on your system, install Python 3.X [Miniconda](https://docs.conda.io/en/latest/miniconda.html#miniconda).
+* Setup Python 3.6 environment: with miniconda installed it can be done as follows
+    * conda create -n \<env-name\> python=3.6
+    * conda activate \<env-name\>
+* Install dependencies: `pip install -r requirements.txt`
 * Install the package: `pip install .`
 
 # Running
